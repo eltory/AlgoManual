@@ -58,6 +58,7 @@
 		559B1AAE228BD08B0091FE8C /* combination.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 559B1AAD228BD08B0091FE8C /* combination.cpp */; };
 		559B1AB0228BD2B30091FE8C /* duplicated_combination.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 559B1AAF228BD2B30091FE8C /* duplicated_combination.cpp */; };
 		559B1BD122C0AAC10091FE8C /* vector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 559B1BD022C0AAC10091FE8C /* vector.cpp */; };
+		559B1BDF22C3AE670091FE8C /* simulated_annealing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 559B1BDE22C3AE670091FE8C /* simulated_annealing.cpp */; };
 		55AD27552266F43900C84BFC /* stack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55AD27542266F43900C84BFC /* stack.cpp */; };
 		55AD27572266F44B00C84BFC /* queue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55AD27562266F44B00C84BFC /* queue.cpp */; };
 		55AD27592266F46500C84BFC /* linked_list(single).cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55AD27582266F46500C84BFC /* linked_list(single).cpp */; };
@@ -69,6 +70,11 @@
 		55AD27652266F9E600C84BFC /* deque.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55AD27642266F9E600C84BFC /* deque.cpp */; };
 		55AD2767226704F500C84BFC /* tree_list.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55AD2766226704F500C84BFC /* tree_list.cpp */; };
 		55AD276A22674A8900C84BFC /* string.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55AD276922674A8900C84BFC /* string.cpp */; };
+		55B0ECEF22D0F45500AE6DCD /* prim.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55B0ECEE22D0F45500AE6DCD /* prim.cpp */; };
+		55B0ECF122D0F46000AE6DCD /* kruskal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55B0ECF022D0F46000AE6DCD /* kruskal.cpp */; };
+		55B0ECF322D0F55D00AE6DCD /* plane_sweeping.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55B0ECF222D0F55D00AE6DCD /* plane_sweeping.cpp */; };
+		55B0ECF522D0F5EA00AE6DCD /* list.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55B0ECF422D0F5EA00AE6DCD /* list.cpp */; };
+		55B0ECF722D0F65700AE6DCD /* hash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55B0ECF622D0F65700AE6DCD /* hash.cpp */; };
 		55BCADF7226DBEEE007467ED /* disjoint_set.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55BCADF6226DBEEE007467ED /* disjoint_set.cpp */; };
 		55D1AF2A222CEDD9005B50BF /* bitmask.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55D1AF29222CEDD9005B50BF /* bitmask.cpp */; };
 		55D1AF2D222CF380005B50BF /* prime_eratos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55D1AF2C222CF380005B50BF /* prime_eratos.cpp */; };
@@ -140,6 +146,7 @@
 		559B1AAD228BD08B0091FE8C /* combination.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = combination.cpp; sourceTree = "<group>"; };
 		559B1AAF228BD2B30091FE8C /* duplicated_combination.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = duplicated_combination.cpp; sourceTree = "<group>"; };
 		559B1BD022C0AAC10091FE8C /* vector.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = vector.cpp; sourceTree = "<group>"; };
+		559B1BDE22C3AE670091FE8C /* simulated_annealing.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = simulated_annealing.cpp; sourceTree = "<group>"; };
 		55AD27542266F43900C84BFC /* stack.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stack.cpp; sourceTree = "<group>"; };
 		55AD27562266F44B00C84BFC /* queue.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = queue.cpp; sourceTree = "<group>"; };
 		55AD27582266F46500C84BFC /* linked_list(single).cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "linked_list(single).cpp"; sourceTree = "<group>"; };
@@ -151,6 +158,11 @@
 		55AD27642266F9E600C84BFC /* deque.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = deque.cpp; sourceTree = "<group>"; };
 		55AD2766226704F500C84BFC /* tree_list.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tree_list.cpp; sourceTree = "<group>"; };
 		55AD276922674A8900C84BFC /* string.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = string.cpp; sourceTree = "<group>"; };
+		55B0ECEE22D0F45500AE6DCD /* prim.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = prim.cpp; sourceTree = "<group>"; };
+		55B0ECF022D0F46000AE6DCD /* kruskal.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = kruskal.cpp; sourceTree = "<group>"; };
+		55B0ECF222D0F55D00AE6DCD /* plane_sweeping.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = plane_sweeping.cpp; sourceTree = "<group>"; };
+		55B0ECF422D0F5EA00AE6DCD /* list.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = list.cpp; sourceTree = "<group>"; };
+		55B0ECF622D0F65700AE6DCD /* hash.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = hash.cpp; sourceTree = "<group>"; };
 		55BCADF6226DBEEE007467ED /* disjoint_set.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = disjoint_set.cpp; sourceTree = "<group>"; };
 		55D1AF29222CEDD9005B50BF /* bitmask.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = bitmask.cpp; sourceTree = "<group>"; };
 		55D1AF2C222CF380005B50BF /* prime_eratos.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = prime_eratos.cpp; sourceTree = "<group>"; };
@@ -203,6 +215,7 @@
 		5526E3FC22030B31005C64AF /* Graph */ = {
 			isa = PBXGroup;
 			children = (
+				55B0ECED22D0F44600AE6DCD /* MST */,
 				5526E44022046D1A005C64AF /* MaximumFlow */,
 				5526E43D22046CFE005C64AF /* Scc */,
 				5526E43222046C92005C64AF /* Tree */,
@@ -365,6 +378,8 @@
 			isa = PBXGroup;
 			children = (
 				559B1BD022C0AAC10091FE8C /* vector.cpp */,
+				55B0ECF422D0F5EA00AE6DCD /* list.cpp */,
+				55B0ECF622D0F65700AE6DCD /* hash.cpp */,
 			);
 			path = STL;
 			sourceTree = "<group>";
@@ -399,12 +414,22 @@
 			path = "C++";
 			sourceTree = "<group>";
 		};
+		55B0ECED22D0F44600AE6DCD /* MST */ = {
+			isa = PBXGroup;
+			children = (
+				55B0ECEE22D0F45500AE6DCD /* prim.cpp */,
+				55B0ECF022D0F46000AE6DCD /* kruskal.cpp */,
+			);
+			path = MST;
+			sourceTree = "<group>";
+		};
 		55D1AF28222CEDBE005B50BF /* Technic */ = {
 			isa = PBXGroup;
 			children = (
 				559B1A80227977310091FE8C /* coord_comp.cpp */,
 				55D1AF29222CEDD9005B50BF /* bitmask.cpp */,
 				55D1AF3B2230B4C8005B50BF /* partial_sum.cpp */,
+				559B1BDE22C3AE670091FE8C /* simulated_annealing.cpp */,
 			);
 			path = Technic;
 			sourceTree = "<group>";
@@ -413,6 +438,7 @@
 			isa = PBXGroup;
 			children = (
 				55D1AF2C222CF380005B50BF /* prime_eratos.cpp */,
+				55B0ECF222D0F55D00AE6DCD /* plane_sweeping.cpp */,
 			);
 			path = Math;
 			sourceTree = "<group>";
@@ -502,11 +528,14 @@
 				559B1BD122C0AAC10091FE8C /* vector.cpp in Sources */,
 				553D33B3220722290082905E /* 2sat.cpp in Sources */,
 				5526E42822046C3A005C64AF /* quick_sort.cpp in Sources */,
+				55B0ECF722D0F65700AE6DCD /* hash.cpp in Sources */,
 				55AD275D2266F47E00C84BFC /* tree_array.cpp in Sources */,
 				5526E42C22046C4E005C64AF /* heap_sort.cpp in Sources */,
 				55AD27572266F44B00C84BFC /* queue.cpp in Sources */,
 				55AD275B2266F47100C84BFC /* linked_list(double).cpp in Sources */,
+				559B1BDF22C3AE670091FE8C /* simulated_annealing.cpp in Sources */,
 				5526E41B22046B87005C64AF /* trie.cpp in Sources */,
+				55B0ECF122D0F46000AE6DCD /* kruskal.cpp in Sources */,
 				5526E45222046DE1005C64AF /* lcs.cpp in Sources */,
 				5526E407220324F8005C64AF /* dfs.cpp in Sources */,
 				5526E43C22046CF3005C64AF /* lca.cpp in Sources */,
@@ -521,6 +550,8 @@
 				5526E43622046CBC005C64AF /* segment_tree.cpp in Sources */,
 				55AD27632266F54100C84BFC /* hash.cpp in Sources */,
 				559B1A89227979A50091FE8C /* scc.cpp in Sources */,
+				55B0ECF322D0F55D00AE6DCD /* plane_sweeping.cpp in Sources */,
+				55B0ECEF22D0F45500AE6DCD /* prim.cpp in Sources */,
 				55AD27652266F9E600C84BFC /* deque.cpp in Sources */,
 				5526E41322046B2B005C64AF /* aho_corasick.cpp in Sources */,
 				55AD27612266F4A400C84BFC /* heap.cpp in Sources */,
@@ -534,6 +565,7 @@
 				559B1AB0228BD2B30091FE8C /* duplicated_combination.cpp in Sources */,
 				55AD27592266F46500C84BFC /* linked_list(single).cpp in Sources */,
 				5526E45922046E2F005C64AF /* binary_search.cpp in Sources */,
+				55B0ECF522D0F5EA00AE6DCD /* list.cpp in Sources */,
 				559B1A872279788A0091FE8C /* flood_fill.cpp in Sources */,
 				5526E44422046D45005C64AF /* edmond-karp.cpp in Sources */,
 				5526E44E22046DBB005C64AF /* two_pointers.cpp in Sources */,

@@ -6,12 +6,16 @@
 //  Copyright © 2019 LSH. All rights reserved.
 //
 
-//
+/**
+ *  sqrt(N)까지, 각 i의 배수를 하나씩 제거하기
+ *  O(NloglogN)
+ */
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
 const int MAX_N = 10000;
 int n;
+bool isP[MAX_N];
 unsigned char sieve[(MAX_N+7)/8];
 // k가 소수인지 확인한다. inline 함수는 코드를 직접 심어서 더 빠른실행을함
 inline bool isPrime(int k){
@@ -36,6 +40,18 @@ void eratosthenes(){
             for(int j=i*i; j<=n; j+=i){
                 setComposite(j);
             }
+        }
+    }
+}
+void sieve_Of_Eratosthenes(int N) {
+    for (int i = 2; i <= N; i++) {
+        isP[i] = true;    // initialize isPrime[] array
+    }
+    int sqrtn=sqrt(N);
+    for (int i=2; i<=sqrt(N); i++) {
+        if (!isP[i]) continue;
+        for (int j=2*i; j<=N; j+=i) {
+            isP[j] = false;
         }
     }
 }
