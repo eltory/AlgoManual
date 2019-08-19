@@ -46,6 +46,7 @@
 		5526E45922046E2F005C64AF /* binary_search.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5526E45822046E2E005C64AF /* binary_search.cpp */; };
 		5526E45B22046E53005C64AF /* parametric_search.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5526E45A22046E53005C64AF /* parametric_search.cpp */; };
 		553D33B3220722290082905E /* 2sat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 553D33B2220722290082905E /* 2sat.cpp */; };
+		55865713230A55BF006928F7 /* linked_list.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55865712230A55BF006928F7 /* linked_list.cpp */; };
 		559B1A81227977310091FE8C /* coord_comp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 559B1A80227977310091FE8C /* coord_comp.cpp */; };
 		559B1A83227977C10091FE8C /* manacher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 559B1A82227977C10091FE8C /* manacher.cpp */; };
 		559B1A852279782A0091FE8C /* tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 559B1A842279782A0091FE8C /* tree.cpp */; };
@@ -75,6 +76,8 @@
 		55B0ECF322D0F55D00AE6DCD /* plane_sweeping.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55B0ECF222D0F55D00AE6DCD /* plane_sweeping.cpp */; };
 		55B0ECF522D0F5EA00AE6DCD /* list.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55B0ECF422D0F5EA00AE6DCD /* list.cpp */; };
 		55B0ECF722D0F65700AE6DCD /* hash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55B0ECF622D0F65700AE6DCD /* hash.cpp */; };
+		55B0ED0922D37CD900AE6DCD /* deque.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55B0ED0822D37CD900AE6DCD /* deque.cpp */; };
+		55B0ED1922DD923F00AE6DCD /* quad_tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55B0ED1822DD923F00AE6DCD /* quad_tree.cpp */; };
 		55BCADF7226DBEEE007467ED /* disjoint_set.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55BCADF6226DBEEE007467ED /* disjoint_set.cpp */; };
 		55D1AF2A222CEDD9005B50BF /* bitmask.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55D1AF29222CEDD9005B50BF /* bitmask.cpp */; };
 		55D1AF2D222CF380005B50BF /* prime_eratos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55D1AF2C222CF380005B50BF /* prime_eratos.cpp */; };
@@ -134,6 +137,7 @@
 		5526E45822046E2E005C64AF /* binary_search.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = binary_search.cpp; sourceTree = "<group>"; };
 		5526E45A22046E53005C64AF /* parametric_search.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = parametric_search.cpp; sourceTree = "<group>"; };
 		553D33B2220722290082905E /* 2sat.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 2sat.cpp; sourceTree = "<group>"; };
+		55865712230A55BF006928F7 /* linked_list.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = linked_list.cpp; sourceTree = "<group>"; };
 		559B1A80227977310091FE8C /* coord_comp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = coord_comp.cpp; sourceTree = "<group>"; };
 		559B1A82227977C10091FE8C /* manacher.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = manacher.cpp; sourceTree = "<group>"; };
 		559B1A842279782A0091FE8C /* tree.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tree.cpp; sourceTree = "<group>"; };
@@ -163,6 +167,8 @@
 		55B0ECF222D0F55D00AE6DCD /* plane_sweeping.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = plane_sweeping.cpp; sourceTree = "<group>"; };
 		55B0ECF422D0F5EA00AE6DCD /* list.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = list.cpp; sourceTree = "<group>"; };
 		55B0ECF622D0F65700AE6DCD /* hash.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = hash.cpp; sourceTree = "<group>"; };
+		55B0ED0822D37CD900AE6DCD /* deque.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = deque.cpp; sourceTree = "<group>"; };
+		55B0ED1822DD923F00AE6DCD /* quad_tree.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = quad_tree.cpp; sourceTree = "<group>"; };
 		55BCADF6226DBEEE007467ED /* disjoint_set.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = disjoint_set.cpp; sourceTree = "<group>"; };
 		55D1AF29222CEDD9005B50BF /* bitmask.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = bitmask.cpp; sourceTree = "<group>"; };
 		55D1AF2C222CF380005B50BF /* prime_eratos.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = prime_eratos.cpp; sourceTree = "<group>"; };
@@ -292,6 +298,7 @@
 				5526E43722046CCA005C64AF /* fenwick_tree.cpp */,
 				5526E43B22046CF3005C64AF /* lca.cpp */,
 				559B1A842279782A0091FE8C /* tree.cpp */,
+				55B0ED1822DD923F00AE6DCD /* quad_tree.cpp */,
 			);
 			path = Tree;
 			sourceTree = "<group>";
@@ -380,6 +387,7 @@
 				559B1BD022C0AAC10091FE8C /* vector.cpp */,
 				55B0ECF422D0F5EA00AE6DCD /* list.cpp */,
 				55B0ECF622D0F65700AE6DCD /* hash.cpp */,
+				55B0ED0822D37CD900AE6DCD /* deque.cpp */,
 			);
 			path = STL;
 			sourceTree = "<group>";
@@ -399,6 +407,7 @@
 				55AD2766226704F500C84BFC /* tree_list.cpp */,
 				5526E41A22046B87005C64AF /* trie.cpp */,
 				55BCADF6226DBEEE007467ED /* disjoint_set.cpp */,
+				55865712230A55BF006928F7 /* linked_list.cpp */,
 			);
 			path = DataStructure;
 			sourceTree = "<group>";
@@ -499,6 +508,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55865713230A55BF006928F7 /* linked_list.cpp in Sources */,
 				55BCADF7226DBEEE007467ED /* disjoint_set.cpp in Sources */,
 				559B1A8D22797A6D0091FE8C /* topological_sort.cpp in Sources */,
 				5526E41922046B7E005C64AF /* huffman.cpp in Sources */,
@@ -519,6 +529,7 @@
 				5526E45B22046E53005C64AF /* parametric_search.cpp in Sources */,
 				5526E42022046BBB005C64AF /* floyd_warshall.cpp in Sources */,
 				559B1AAE228BD08B0091FE8C /* combination.cpp in Sources */,
+				55B0ED0922D37CD900AE6DCD /* deque.cpp in Sources */,
 				5526E42E22046C59005C64AF /* counting_sort.cpp in Sources */,
 				5526E42A22046C43005C64AF /* merge_sort.cpp in Sources */,
 				559B1AAA228BCD740091FE8C /* permutation_2.cpp in Sources */,
@@ -556,6 +567,7 @@
 				5526E41322046B2B005C64AF /* aho_corasick.cpp in Sources */,
 				55AD27612266F4A400C84BFC /* heap.cpp in Sources */,
 				559B1A83227977C10091FE8C /* manacher.cpp in Sources */,
+				55B0ED1922DD923F00AE6DCD /* quad_tree.cpp in Sources */,
 				5526E44222046D36005C64AF /* ford-fulkerson.cpp in Sources */,
 				559B1AAC228BCEFC0091FE8C /* duplicated_permutation.cpp in Sources */,
 				5526E405220324ED005C64AF /* bfs.cpp in Sources */,

@@ -39,7 +39,7 @@ bool push(int value){
     }
     int curr = size;
     heap[size++] = value;
-    while(curr>0 && heap[curr]<heap[(curr-1)/2]){
+    while(curr>0 && heap[curr]>=heap[(curr-1)/2]){
         int tmp = heap[(curr-1)/2];
         heap[(curr-1)/2] = heap[curr];
         heap[curr] = tmp;
@@ -63,7 +63,7 @@ bool pop(int *value){
             child = curr*2+1;
         else
             child = heap[curr*2+1]<heap[curr*2+2] ? curr*2+1:curr*2+2;
-        if(heap[curr]<heap[child])
+        if(heap[curr]>=heap[child])
             break;
         int tmp = heap[curr];
         heap[curr] = heap[child];

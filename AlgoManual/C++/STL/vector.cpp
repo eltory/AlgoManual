@@ -8,6 +8,7 @@
 
 /**
  *  Vector
+ *  
  */
 template <typename T>
 class vector {

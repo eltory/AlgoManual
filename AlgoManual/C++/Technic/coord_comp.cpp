@@ -13,7 +13,8 @@
  * 좌표의 등장 수는 많아봐야 N+2*M개를 이용
  * 따라서 우리는 최대 N+2*M개의 좌표를 인덱싱하여 정렬 된 순서대로 1~N+2*M의 번호를 매겨준 뒤 BIT 등을 이용하여 처리
  */
-#include <stdio.h>
+#include <iostream>
+#include <algorithm>
 #include <vector>
 using namespace std;
 typedef pair<int, int> P;
@@ -26,11 +27,11 @@ int get_idx(int x){
 int main(){
     int n, m;
     for(int i=0; i<n; ++i){
-        scanf("%d", &a[i]);
+        cin >> a[i];
         idx.push_back(a[i]);
     }
     for(int i=0; i<m; ++i){
-        scanf("%d %d", &qry[i].first, &qry[i].second);
+        cin >> qry[i].first >> qry[i].second;
         idx.push_back(qry[i].first);
         idx.push_back(qry[i].second);
     }
