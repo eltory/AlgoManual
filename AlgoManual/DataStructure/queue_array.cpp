@@ -1,5 +1,5 @@
 //
-//  stack.cpp
+//  queue_array.cpp
 //  AlgoManual
 //
 //  Created by LSH on 17/04/2019.
@@ -8,7 +8,7 @@
 
 /**
  * Container : deque
- * LIFO : Last In First Out
+ * FIFO : First In First Out
  * push : O(1)
  * pop  : O(1)
  */
@@ -16,37 +16,43 @@
 using namespace std;
 const int MAX_N = 100;
 
-int top;
-int stack[MAX_N];
+int front, rear;
+int queue[MAX_N];
 
 void init(void){
-    top = 0;
+    front = 0;
+    rear = 0;
 }
 
 bool isEmpty(void){
-    return top==0;
+    return front==rear;
 }
 
 bool isFull(void){
-    return top==MAX_N;
+    if((rear+1)%MAX_N == front)
+        return true;
+    return false;
 }
 
 bool push(int value){
     if(isFull()){
-        cout << "stack overflow";
+        cout << "queue is full";
         return false;
     }
-    stack[top++] = value;
+    queue[rear++] = value;
+    if(rear==MAX_N)
+        rear = 0;
     return true;
 }
 
 bool pop(int *value){
     if(isEmpty()){
-        cout << "stack is empty";
+        cout << "queue is empty";
         return false;
     }
-    top--;
-    *value = stack[top];
+    *value=queue[front++];
+    if(front==MAX_N)
+        front = 0;
     return true;
 }
 

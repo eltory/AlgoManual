@@ -14,11 +14,8 @@ using namespace std;
 typedef int val_d;
 
 int main() {
-    
     int n, k;
-    
     cin >> n >> k;
-    
     vector <val_d> d(n);
     
     for (int i = 0; i < n; i++)
@@ -31,7 +28,6 @@ int main() {
         else sum = sum - d[i - k] + d[i];
         max = (max < sum) ? sum : max;
     }
-    
     cout << max;
 }
 

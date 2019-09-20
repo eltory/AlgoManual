@@ -10,7 +10,7 @@
  *
  */
 #include <iostream>
-#include <string>
+#include <string>   
 using namespace std;
 const int MAX_KEY = 64;
 const int MAX_DATA = 128;
@@ -22,11 +22,22 @@ typedef struct{
 }Hash;
 Hash tb[MAX_TABLE];
 
-unsigned long hash_func(const char *str){
+unsigned long hash_func(const char* str){
     unsigned long hash = 5381;
     int c;
     while((c = *str++)){
         hash = ((hash<<5)+hash+c)%MAX_TABLE;
+    }
+    return hash%MAX_TABLE;
+}
+
+int hash_func2(const char* str){
+    int hash = 5381;
+    int c;
+    
+    while(*str != '\0'){
+        hash = ((hash<<4) + (int)(*str))%MAX_TABLE;
+        str++;
     }
     return hash%MAX_TABLE;
 }

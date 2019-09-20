@@ -6,59 +6,75 @@
 //  Copyright © 2019 LSH. All rights reserved.
 //
 
+/**
+ *  단일 연결리스트,  정렬된 순서 유지
+ */
+
 #include <iostream>
+#include <cstdlib>
 using namespace std;
-const int MAX_NODE = 100;
+
+typedef struct node* nptr;
 typedef struct node{
     int data;
-    struct node* prev;
-    struct node* next;
-}Node;
+    nptr next;
+}node;
 
-typedef struct{
-    bool use;
-    Node node;
-}NodeHeap;
-NodeHeap heap[MAX_NODE];
+nptr head;
 
-void init(void){
-    for(int i=0; i<MAX_NODE; ++i)
-        heap[i].use = 0;
+nptr createNode(int val){
+    nptr nNode = (nptr)malloc(sizeof(node));
+    nNode->data = val;
+    nNode->next = NULL;
+    return nNode;
 }
 
-void initNode(Node* node){
-    node->data=0;
-    node->prev=node;
-    node->next=node;
+void init(){
+    if(head == NULL){
+        head = createNode(-1);
+        return;
+    }
+    nptr p = head->next;
+    while(p != NULL){
+        nptr tmp = p->next;
+        free(p);
+        p = tmp;
+    }
+    head->next = NULL;
 }
 
-Node* getNode(void){
-    for(int i=0; i<MAX_NODE; ++i){
-        if(!heap[i].use){
-            heap[i].use = true;
-            initNode(&heap[i].node);
-            return &heap[i].node;
+void insertion(int val){
+    nptr p = head;
+    nptr n = p->next;
+    
+    while(n != NULL && val > n->data){
+        p = n;
+        n = n->next;
+    }
+    nptr newNode = createNode(val);
+    p->next = newNode;
+    newNode->next = n;
+}
+
+void deletion(int val){
+    nptr p = head;
+    nptr n = p->next;
+    while(n != NULL){
+        if(n->data == val) {
+            p->next = n->next;
+            free(n);
+            return;
         }
+        p = n;
+        n = n->next;
     }
-    return NULL;
 }
 
-void delNode(Node* node){
-    NodeHeap* heap_node = (NodeHeap*)((int*)node-1);
-    heap_node->use = false;
-}
-
-Node* appendNode(Node* list, int data){
-    Node* node = getNode();
-    node->data = data;
-    if(list==NULL)
-        return node;
-    else{
-        Node* last = list->prev;
-        last->next = node;
-        list->prev = node;
-        node->prev = last;
-        node->next = list;
-        return list;
+void print(){
+    nptr p = head->next;
+    while(p != NULL){
+        cout << p->data << " ";
+        p = p->next;
     }
+    cout << "\n";
 }

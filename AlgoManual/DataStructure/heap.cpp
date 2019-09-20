@@ -25,7 +25,7 @@ void init(void){
 }
 
 bool isEmpty(void){
-    return size<=0;
+    return size <= 0;
 }
 
 bool isFull(void){

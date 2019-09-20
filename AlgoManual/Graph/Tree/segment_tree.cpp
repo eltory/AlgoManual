@@ -59,7 +59,7 @@ public:
         return sum(2*n, start, (start+end)/2, left, right) + sum(2*n+1, (start+end)/2+1, end, left, right);
     }
     
-    /* Query (in this moment for sumarization) */
+    /* Query (in this moment for minimum value) */
     lld mmin(int n, int start, int end, int left, int right){
         if(left>end || right<start) return 1e7;
         else if(left<=start && end<=right) return node[n];
