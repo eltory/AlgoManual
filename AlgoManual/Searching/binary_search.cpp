@@ -10,34 +10,36 @@
 #include <algorithm>
 using namespace std;
 const int MAX = 5005;
-int d[MAX], n;
+int d[MAX], N, query;
 
-// 원하는 값이 있는지 없는지 반환(logN)
-bool bsearch(int val){
-    int l = 0, r  = n - 1;
+// 원하는 값이 있는지 없는지 반환(logN) 위치도 반환
+bool bsearch(int val, int* key){
+    int l = 0, r = N-1;
     
     while(l <= r){
         int mid = (l+r)/2;
-        if(val == d[mid]) return true;
-        else if(val > d[mid]) l = mid + 1;
-        else r = mid - 1;
+        if(val == d[mid]) {
+            *key = mid;
+            return true;
+        }
+        else if(val > d[mid]) l = mid+1;
+        else r = mid-1;
     }
     
     return false;
 }
 
 int main() {
-    scanf("%d", &n);
+    cin >> N;
+    for (int i=0; i<N; ++i) cin >> d[i];
     
-    for (int i = 0; i < n; i++)
-        cin >> d[i];
-    sort(d, d+n);
-    int query;
+    sort(d, d+N);
     cin >> query;
     while (query--) {
-        int x; cin >> x;
-        
-        if (bsearch(x)) cout << "exist" << endl;
-        else cout << "not exist" << endl;
+        int x, idx = -1;
+        cin >> x;
+        if (bsearch(x, &idx)) {
+            cout << "exist at " << idx << endl;
+        } else cout << "not exist" << endl;
     }
 }

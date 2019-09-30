@@ -19,13 +19,20 @@ using namespace std;
 
 int main(){
     int N = 12345;
+    char C[3] = {'1','2','3'};
     string S = "77777";
     
-    // String to int
+    // String to int 진법 변환 가능
     N = stoi(S, NULL, 10);
     
     // Int to string
     S = to_string(N);
+    
+    // String to char
+    C = S.c_str();
+    
+    // Char to string
+    S = string(C);
     
     // Reverse string (현재의 값을 반전시킴, 리턴 값 없음)
     reverse(S.begin(), S.end());

@@ -10,121 +10,86 @@
 #include <iostream>
 #include <cstdlib>
 using namespace std;
-typedef struct TreeNode* nptr;
-typedef struct TreeNode{
+
+typedef struct Node* nptr;
+typedef struct Node{
     int data;
     nptr left, right;
-}TreeNode;
+}Node;
 
 nptr root = NULL;
 
-/**
- *  트리노드 생성
- */
-nptr create(int key){
-    nptr node = (nptr)malloc(sizeof(TreeNode));
-    node->left = NULL;
-    node->right = NULL;
-    node->data = key;
-    return node;
+nptr findMin(nptr root){
+    nptr curr = root;
+    while(curr->left != NULL)
+        curr = curr->left;
+    return curr;
 }
 
-/**
- *  key 검색
- */
-nptr search(int key, bool func){
-    nptr parent = root;
-    nptr prev = parent;
-    while(parent != NULL){
-        if(parent->data == key){
-            if(func) return prev;
-            return parent;
-        }else if(parent->data < key){
-            if(parent->right == NULL){
-                return parent;
-            }
-            prev = parent;
-            parent = parent->right;
-        }else {
-            if(parent->left == NULL){
-                return parent;
-            }
-            prev = parent;
-            parent = parent->left;
+nptr insertion(nptr curr, int key){
+    if(curr == NULL){
+        curr = (nptr)malloc(sizeof(Node));
+        curr->data = key;
+        curr->left = curr->right = NULL;
+        return curr;
+    } else{
+        if(curr->data > key)
+            curr->left = insertion(curr->left, key);
+        else
+            curr->right = insertion(curr->right, key);
+    }
+    return curr;
+}
+
+nptr deletion(nptr curr, int key){
+    nptr tNode = NULL;
+    if(curr == NULL)
+        return NULL;
+    
+    if(curr->data > key)
+        curr->left = deletion(curr->left, key);
+    else if(curr->data < key)
+        curr->right = deletion(curr->right, key);
+    else{
+        if(curr->right != NULL && curr->left != NULL){
+            tNode = findMin(curr->right);
+            curr->data = tNode->data;
+            curr->right = deletion(curr->right, tNode->data);
+        } else{
+            tNode = (curr->left == NULL) ? curr->right : curr->left;
+            free(curr);
+            return tNode;
         }
     }
-    return parent;
+    return curr;
 }
 
-/**
- *  트리노드 삽입
- *  Insert func = 0
- */
-void insertion(int key){
-    nptr findLoc = search(key, 0);
-    if(findLoc == NULL){
-        root = create(key);
-    }else{
-        nptr node = create(key);
-        if(findLoc->data < key) findLoc->right = node;
-        else if(findLoc->data > key) findLoc->left = node;
-    }
-}
-
-/**
- *  트리노드 삭제
- *  Delete func = 1
- */
-void deletion(int key){
-    nptr findLoc = search(key, 1);
-    if(findLoc != NULL){
-        if(findLoc == root){
-            if(findLoc->left == NULL && findLoc->right == NULL){
-                free(root);
-            }else if((findLoc->left == NULL) || (findLoc->right == NULL)){
-                free(root);
-                if(findLoc->left != NULL) root = findLoc->left;
-                else if(findLoc->right != NULL) root = findLoc->right;
-            }else{
-                
-            }
-        }else{
-            if(findLoc->left == NULL && findLoc->right == NULL){        // 자식노드가 없는 경우
-                
-            }else if((findLoc->left == NULL) || (findLoc->right == NULL)){        // 하나의 서브트리만 있는 경우
-                
-            }else{        // 두개의 서브트리가 있는 경우
-                
-            }
-        }
-    }
-}
-
-void preOrd(nptr parent){
-    if(parent == NULL) return;
-    cout << parent->data << "\n";
-    preOrd(parent->left);
-    preOrd(parent->right);
-}
-
-void inOrd(nptr parent){
-    if(parent == NULL) return;
-    preOrd(parent->left);
-    cout << parent->data << "\n";
-    preOrd(parent->right);
-}
-
-void postOrd(nptr parent){
-    if(parent == NULL) return;
-    preOrd(parent->left);
-    preOrd(parent->right);
-    cout << parent->data << "\n";
-}
-
-int main(){
-    ios::sync_with_stdio(false);
-    cin.tie(0);
+nptr search(nptr curr, int key){
+    if(root == NULL)
+        return NULL;
     
-    
-    return 0;
+    if(curr->data == key) return curr;
+    else if(curr->data > key) return search(curr->left, key);
+    else return search(curr->right, key);
+}
+
+void preOrder(nptr curr){
+    if(curr == NULL) return;
+    cout << curr->data << endl;
+    preOrder(curr->left);
+    preOrder(curr->right);
+}
+
+void inOrder(nptr curr){
+    if(curr == NULL) return;
+    inOrder(curr->left);
+    cout << curr->data << endl;
+    inOrder(curr->right);
+}
+
+void postOrder(nptr curr){
+    if(curr == NULL) return;
+    postOrder(curr->left);
+    postOrder(curr->right);
+    cout << curr->data << endl;
 }
