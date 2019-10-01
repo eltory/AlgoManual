@@ -29,7 +29,7 @@ int main(){
     S = to_string(N);
     
     // String to char
-    C = S.c_str();
+    S.c_str();
     
     // Char to string
     S = string(C);
