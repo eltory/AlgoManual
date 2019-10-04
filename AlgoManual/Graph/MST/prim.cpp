@@ -11,10 +11,8 @@
 #include <algorithm>
 #include <functional>
 #include <queue>
-
-#define PII pair<int, int>
-
 using namespace std;
+typedef pair<int, int> P;
 
 int main() {
     int n, m;
@@ -22,14 +20,14 @@ int main() {
     cin >> n >> m;
     
     vector <int> v(n + 1);
-    vector <vector<PII>> g(n + 1);
-    priority_queue<PII, vector<PII>, greater<PII>> pq;
+    vector <vector<P>> g(n + 1);
+    priority_queue<P, vector<P>, greater<P>> pq;
     
     while (m--) {
         int x, y, cost;
         cin >> x >> y >> cost;
-        g[x].push_back(make_pair(cost, y));
-        g[y].push_back(make_pair(cost, x));
+        g[x].push_back(P(cost, y));
+        g[y].push_back(P(cost, x));
     }
     
     int s = 1;
@@ -37,7 +35,7 @@ int main() {
     
     for (int i = 0; i < n - 1; i++) {
         v[s] = 1;
-        for (PII x : g[s]) pq.push(x);
+        for (P x : g[s]) pq.push(x);
         while (v[pq.top().second]) pq.pop();
         ans += pq.top().first;
         s = pq.top().second;

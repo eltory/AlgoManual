@@ -1,0 +1,106 @@
+//
+//  hash_linear_probing.cpp
+//  AlgoManual
+//
+//  Created by LSH on 04/10/2019.
+//  Copyright © 2019 LSH. All rights reserved.
+//
+
+#include <iostream>
+#include <cstring>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+const int MAX_KEY_SIZE = 64;
+const int MAX_DATA_SIZE = 128;
+const int MAX_TABLE_SIZE = 4096;
+
+typedef struct Bucket* ptr;
+typedef struct Bucket{
+    char data[MAX_DATA_SIZE];   // Key겸 Data, 추가로 설정 가능
+    ptr next;   // Chaining
+    
+    Bucket(){
+        memset(data, 0, sizeof(data));
+        next = NULL;
+    }
+    Bucket(char* key){
+        strcpy(data, key);
+    }
+}Bucket;
+
+ptr hashTable[MAX_TABLE_SIZE];
+
+/* 데이터의 해싱값을 반환 (Key) */
+unsigned long hashing(char* key){
+    unsigned long hash = 5381;  // 골든넘버 소수
+    
+    while(*key != '\0'){
+        hash = (((hash << 5) + *key) + hash);  // hash * 33
+        /*
+         *  LCG (Linear Congruential Generator)이랑 비슷한 역할로
+         *  Random하게 난수 발생역할을 한다.
+         */
+        key++;
+    }
+    return hash % MAX_TABLE_SIZE;
+}
+
+/* 해싱된 index를 기준으로
+ * 해시테이블에서 값 찾기
+ */
+void search(char* key){
+    unsigned long idx = hashing(key);
+    ptr p = hashTable[idx];
+    
+    if(p == NULL){
+        cout << "Not founded.\n";
+        return;
+    }
+    while(strcmp(p->data, key) != 0){
+        p = p->next;
+        if(p == NULL)
+            return;
+    }
+    cout << p->data;
+}
+
+/* 해싱된 index에 데이터 삽입
+ * 충돌이 일어나면 체이닝으로 리스트 연결
+ */
+void insertion(char* key){
+    unsigned long idx = hashing(key);
+    ptr bucket = new Bucket(key);
+    
+    if(hashTable[idx] == NULL){
+        hashTable[idx] = bucket;
+    }else{
+        ptr p = hashTable[idx];
+        while(p->next != NULL)
+            p = p->next;
+        p->next = bucket;
+    }
+    cout << "Insertion " << key << " completed.\n";
+}
+
+/* 헤싱된 index로 버킷 삭제
+ * 체이닝일 경우 리스트 순회하며 찾아 삭제
+ */
+void deletion(char* key){
+    unsigned long idx = hashing(key);
+    ptr p = hashTable[idx];
+    if(p == NULL){
+        cout << "Not founded.\n";
+        return;
+    }
+    ptr prev = p;
+    while(strcmp(p->data, key) != 0){
+        prev = p;
+        p = p->next;
+        if(p == NULL)
+            return;
+    }
+    prev->next = p->next;
+    free(p);
+    cout << "Deletion " << key << " completed.\n";
+}

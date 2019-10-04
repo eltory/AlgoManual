@@ -32,22 +32,12 @@ int height(nptr node){
 
 /* 자식노드들의 높이 차이 왼쪽-오른쪽 */
 int diff(nptr node){
-    int left = height(node->left);
-    int right = height(node->right);
-    int d = left - right;
-    return d;
+    return height(node->left) - height(node->right);
 }
 
-/* RR rotation */
-nptr RR(nptr parent){
-    nptr tmp;
-    tmp = parent->right;
-    parent->right = tmp->left;
-    tmp->left = parent;
-    return tmp;
-}
-
-/* LL rotation */
+/*  LL
+ *  Right Rotation을 통해 왼쪽으로 치우친 트리를 오른쪽으로 균형맞춤
+ */
 nptr LL(nptr parent){
     nptr tmp;
     tmp = parent->left;
@@ -56,16 +46,34 @@ nptr LL(nptr parent){
     return tmp;
 }
 
-/* LR rotation */
+/*  RR
+ *  Left Rotation을 통해 오른쪽으로 치우친 트리를 왼쪽으로 균형맞춤
+ */
+nptr RR(nptr parent){
+    nptr tmp;
+    tmp = parent->right;
+    parent->right = tmp->left;
+    tmp->left = parent;
+    return tmp;
+}
+
+/*  LR
+ *  L자식 먼저 RR을 통해 Left Rotation후 LL을 만들고
+ *  LL인 상태를 Right Rotation을 통해 균형맞춤
+ *  L->R이기에 밑에서부터 RR->LL 연산
+ */
 nptr LR(nptr parent){
-    // LR 회전은 왼쪽 자식을 기준으로 RR, 본인을 기준으로 LL회전합니다.
     nptr tmp;
     tmp = parent->left;
     parent->left = RR(tmp);
     return LL(parent);
 }
 
-/* RL rotation */
+/*  RL
+ *  R자식 먼저 LL을 통해 Rigtt Rotation후 RR을 만들고
+ *  RR인 상태를 Left Rotation을 통해 균형맞춤
+ *  R->L이기에 밑에서부터 LL->RR 연산
+ */
 nptr RL(nptr parent){
     nptr tmp;
     tmp = parent->right;
@@ -75,12 +83,12 @@ nptr RL(nptr parent){
 
 /* AVL트리의 높이차를 유지시키는 balance 함수 */
 nptr balance(nptr curr){
-    int dif = diff(curr);
+    int BF = diff(curr);
 
-    if(dif > 1){    // 왼쪽 서브트리에 추가되어 발란스 깨짐
+    if(BF > 1){    // 왼쪽 서브트리에 추가되어 발란스 깨짐
         if(diff(curr->left) > 0) curr = LL(curr);   // 왼쪽 자식에 추가됨
         else curr = LR(curr);   // 오른쪽 자식에 추가됨
-    }else if(dif < -1) {    // 오른쪽 서브트리에 추가되어 발란스 깨짐
+    }else if(BF < -1) {    // 오른쪽 서브트리에 추가되어 발란스 깨짐
         if(diff(curr->right) > 0) curr = RL(curr);  // 오른쪽 자식에 추가됨
         else curr = RR(curr);   // 왼쪽 자식에 추가됨
     }
@@ -92,6 +100,14 @@ nptr findMin(nptr root){
     nptr curr = root;
     while(curr->left != NULL)
         curr = curr->left;
+    return curr;
+}
+
+/* Left Most 구하기 */
+nptr findMax(nptr root){
+    nptr curr = root;
+    while(curr->right != NULL)
+        curr = curr->right;
     return curr;
 }
 
@@ -123,9 +139,16 @@ nptr deletion(nptr curr, int key){
         curr->right = deletion(curr->right, key);
     else{
         if(curr->right != NULL && curr->left != NULL){
+            /* Right Least 방식 */
             tNode = findMin(curr->right);
             curr->data = tNode->data;
             curr->right = deletion(curr->right, tNode->data);
+            
+            /* Left Most 방식
+            tNode = findMax(curr->left);
+            curr->data = tNode->data;
+            curr->left = deletion(curr->left, tNode->data);
+             */
         } else{
             tNode = (curr->left == NULL) ? curr->right : curr->left;
             free(curr);

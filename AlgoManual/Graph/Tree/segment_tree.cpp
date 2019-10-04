@@ -22,8 +22,7 @@
 using namespace std;
 typedef long long int lld;
 
-class segment_tree{
-public:
+typedef struct segment_tree{
     vector<lld> node;
     
     segment_tree(int n){
@@ -65,13 +64,14 @@ public:
         else if(left<=start && end<=right) return node[n];
         return min(mmin(2*n, start, (start+end)/2, left, right), mmin(2*n+1, (start+end)/2+1, end, left, right));
     }
-};
+}segmentTree;
 
 int main(){
     vector<lld> a = {1,4,-3,7,6,-2,0,1};
-    segment_tree st = segment_tree(a.size());
-    st.init(a, 1, 0, a.size()-1);
-    st.update(1, 0, a.size()-1, 2, 4);
-    cout << st.mmin(1, 0, a.size()-1, 5, 7)<<endl;
+    int size = (int)a.size();
+    segmentTree st = segmentTree(size);
+    st.init(a, 1, 0, (size-1);
+    st.update(1, 0, size-1, 2, 4);
+    cout << st.mmin(1, 0, size-1, 5, 7)<<endl;
     return 0;
 }

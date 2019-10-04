@@ -53,6 +53,14 @@
 		553ACC242341C5300079F35A /* critical_section.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 553ACC232341C5300079F35A /* critical_section.cpp */; };
 		553ACC652341E1330079F35A /* semaphores.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 553ACC642341E1330079F35A /* semaphores.cpp */; };
 		553ACC672341E6120079F35A /* semaphore_linux.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 553ACC662341E6120079F35A /* semaphore_linux.cpp */; };
+		553ACC7D2345B1770079F35A /* b_tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 553ACC7C2345B1770079F35A /* b_tree.cpp */; };
+		553ACC7F2345B1820079F35A /* b+_tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 553ACC7E2345B1820079F35A /* b+_tree.cpp */; };
+		553ACC8923470A2C0079F35A /* hash_linear_probing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 553ACC8823470A2C0079F35A /* hash_linear_probing.cpp */; };
+		553ACC8B23470A7E0079F35A /* hash_quadratic_probing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 553ACC8A23470A7E0079F35A /* hash_quadratic_probing.cpp */; };
+		553ACC9223470B120079F35A /* hash_double_hasing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 553ACC9123470B120079F35A /* hash_double_hasing.cpp */; };
+		553ACC9423470B380079F35A /* str_func.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 553ACC9323470B380079F35A /* str_func.cpp */; };
+		553ACC9623470BA10079F35A /* hash_chaining_binary_search_tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 553ACC9523470BA10079F35A /* hash_chaining_binary_search_tree.cpp */; };
+		553ACC9823470BF80079F35A /* chaining_binary_search_tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 553ACC9723470BF80079F35A /* chaining_binary_search_tree.cpp */; };
 		553D33B3220722290082905E /* 2sat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 553D33B2220722290082905E /* 2sat.cpp */; };
 		55865713230A55BF006928F7 /* linked_list.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55865712230A55BF006928F7 /* linked_list.cpp */; };
 		559B1A81227977310091FE8C /* coord_comp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 559B1A80227977310091FE8C /* coord_comp.cpp */; };
@@ -158,6 +166,14 @@
 		553ACC232341C5300079F35A /* critical_section.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = critical_section.cpp; sourceTree = "<group>"; };
 		553ACC642341E1330079F35A /* semaphores.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = semaphores.cpp; sourceTree = "<group>"; };
 		553ACC662341E6120079F35A /* semaphore_linux.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = semaphore_linux.cpp; sourceTree = "<group>"; };
+		553ACC7C2345B1770079F35A /* b_tree.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = b_tree.cpp; sourceTree = "<group>"; };
+		553ACC7E2345B1820079F35A /* b+_tree.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "b+_tree.cpp"; sourceTree = "<group>"; };
+		553ACC8823470A2C0079F35A /* hash_linear_probing.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = hash_linear_probing.cpp; sourceTree = "<group>"; };
+		553ACC8A23470A7E0079F35A /* hash_quadratic_probing.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = hash_quadratic_probing.cpp; sourceTree = "<group>"; };
+		553ACC9123470B120079F35A /* hash_double_hasing.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = hash_double_hasing.cpp; sourceTree = "<group>"; };
+		553ACC9323470B380079F35A /* str_func.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = str_func.cpp; sourceTree = "<group>"; };
+		553ACC9523470BA10079F35A /* hash_chaining_binary_search_tree.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = hash_chaining_binary_search_tree.cpp; sourceTree = "<group>"; };
+		553ACC9723470BF80079F35A /* chaining_binary_search_tree.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = chaining_binary_search_tree.cpp; sourceTree = "<group>"; };
 		553D33B2220722290082905E /* 2sat.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 2sat.cpp; sourceTree = "<group>"; };
 		55865712230A55BF006928F7 /* linked_list.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = linked_list.cpp; sourceTree = "<group>"; };
 		559B1A80227977310091FE8C /* coord_comp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = coord_comp.cpp; sourceTree = "<group>"; };
@@ -331,6 +347,8 @@
 				55F744C323348F69008C4AF8 /* binary_search_tree_reculsive.cpp */,
 				55F744C72334ACA8008C4AF8 /* avl_tree.cpp */,
 				55F744C92334ACB6008C4AF8 /* red_black_tree.cpp */,
+				553ACC7C2345B1770079F35A /* b_tree.cpp */,
+				553ACC7E2345B1820079F35A /* b+_tree.cpp */,
 			);
 			path = Tree;
 			sourceTree = "<group>";
@@ -412,6 +430,62 @@
 			path = Synchronization;
 			sourceTree = "<group>";
 		};
+		553ACC8C23470A850079F35A /* Hash */ = {
+			isa = PBXGroup;
+			children = (
+				55F744BD2330C08F008C4AF8 /* hash_chaining.cpp */,
+				553ACC9123470B120079F35A /* hash_double_hasing.cpp */,
+				553ACC8823470A2C0079F35A /* hash_linear_probing.cpp */,
+				553ACC8A23470A7E0079F35A /* hash_quadratic_probing.cpp */,
+				55AD27622266F54100C84BFC /* hash.cpp */,
+				553ACC9323470B380079F35A /* str_func.cpp */,
+				553ACC9523470BA10079F35A /* hash_chaining_binary_search_tree.cpp */,
+				553ACC9723470BF80079F35A /* chaining_binary_search_tree.cpp */,
+			);
+			path = Hash;
+			sourceTree = "<group>";
+		};
+		553ACC8D23470A9C0079F35A /* Stack */ = {
+			isa = PBXGroup;
+			children = (
+				55AD27542266F43900C84BFC /* stack_array.cpp */,
+				55F744B5232F5B9C008C4AF8 /* stack_list.cpp */,
+			);
+			path = Stack;
+			sourceTree = "<group>";
+		};
+		553ACC8E23470AA10079F35A /* Queue */ = {
+			isa = PBXGroup;
+			children = (
+				55AD27562266F44B00C84BFC /* queue_array.cpp */,
+				55F744B9232F64E4008C4AF8 /* queue_list.cpp */,
+			);
+			path = Queue;
+			sourceTree = "<group>";
+		};
+		553ACC8F23470AA50079F35A /* Tree */ = {
+			isa = PBXGroup;
+			children = (
+				5526E41A22046B87005C64AF /* trie.cpp */,
+				55AD2766226704F500C84BFC /* tree_array.cpp */,
+				55AD275C2266F47E00C84BFC /* tree_list.cpp */,
+				55AD27602266F4A400C84BFC /* heap.cpp */,
+				553ACC1D2340761E0079F35A /* heap2.cpp */,
+				55AD275E2266F49100C84BFC /* binary_search_tree.cpp */,
+			);
+			path = Tree;
+			sourceTree = "<group>";
+		};
+		553ACC9023470AC80079F35A /* List */ = {
+			isa = PBXGroup;
+			children = (
+				55865712230A55BF006928F7 /* linked_list.cpp */,
+				55AD275A2266F47100C84BFC /* linked_list(double).cpp */,
+				55AD27582266F46500C84BFC /* linked_list(single).cpp */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
 		559B1A8A227979B60091FE8C /* Dfs */ = {
 			isa = PBXGroup;
 			children = (
@@ -456,23 +530,13 @@
 		55AD27532266F42600C84BFC /* DataStructure */ = {
 			isa = PBXGroup;
 			children = (
-				55AD275E2266F49100C84BFC /* binary_search_tree.cpp */,
 				55AD27642266F9E600C84BFC /* deque.cpp */,
 				55BCADF6226DBEEE007467ED /* disjoint_set.cpp */,
-				55F744BD2330C08F008C4AF8 /* hash_chaining.cpp */,
-				55AD27622266F54100C84BFC /* hash.cpp */,
-				55AD27602266F4A400C84BFC /* heap.cpp */,
-				553ACC1D2340761E0079F35A /* heap2.cpp */,
-				55865712230A55BF006928F7 /* linked_list.cpp */,
-				55AD275A2266F47100C84BFC /* linked_list(double).cpp */,
-				55AD27582266F46500C84BFC /* linked_list(single).cpp */,
-				55AD27562266F44B00C84BFC /* queue_array.cpp */,
-				55F744B9232F64E4008C4AF8 /* queue_list.cpp */,
-				55AD27542266F43900C84BFC /* stack_array.cpp */,
-				55F744B5232F5B9C008C4AF8 /* stack_list.cpp */,
-				55AD2766226704F500C84BFC /* tree_array.cpp */,
-				55AD275C2266F47E00C84BFC /* tree_list.cpp */,
-				5526E41A22046B87005C64AF /* trie.cpp */,
+				553ACC8C23470A850079F35A /* Hash */,
+				553ACC9023470AC80079F35A /* List */,
+				553ACC8E23470AA10079F35A /* Queue */,
+				553ACC8D23470A9C0079F35A /* Stack */,
+				553ACC8F23470AA50079F35A /* Tree */,
 			);
 			path = DataStructure;
 			sourceTree = "<group>";
@@ -584,10 +648,12 @@
 				55AD2767226704F500C84BFC /* tree_array.cpp in Sources */,
 				559B1A81227977310091FE8C /* coord_comp.cpp in Sources */,
 				5526E41D22046B95005C64AF /* suffix_array.cpp in Sources */,
+				553ACC9223470B120079F35A /* hash_double_hasing.cpp in Sources */,
 				5526E45422046DEB005C64AF /* lis.cpp in Sources */,
 				553ACC06233C8DB10079F35A /* pair.cpp in Sources */,
 				5526E40F22046AF7005C64AF /* kmp.cpp in Sources */,
 				559B1AA8228BCBD20091FE8C /* permutation_1.cpp in Sources */,
+				553ACC9823470BF80079F35A /* chaining_binary_search_tree.cpp in Sources */,
 				5526E42222046BD1005C64AF /* bubble_sort.cpp in Sources */,
 				5526E43122046C88005C64AF /* topological_sort.cpp in Sources */,
 				55F744C82334ACA8008C4AF8 /* avl_tree.cpp in Sources */,
@@ -610,12 +676,14 @@
 				559B1BD122C0AAC10091FE8C /* vector.cpp in Sources */,
 				553D33B3220722290082905E /* 2sat.cpp in Sources */,
 				553ACC242341C5300079F35A /* critical_section.cpp in Sources */,
+				553ACC7D2345B1770079F35A /* b_tree.cpp in Sources */,
 				5526E42822046C3A005C64AF /* quick_sort.cpp in Sources */,
 				55B0ECF722D0F65700AE6DCD /* hash_using.cpp in Sources */,
 				55AD275D2266F47E00C84BFC /* tree_list.cpp in Sources */,
 				5526E42C22046C4E005C64AF /* heap_sort.cpp in Sources */,
 				55AD27572266F44B00C84BFC /* queue_array.cpp in Sources */,
 				55AD275B2266F47100C84BFC /* linked_list(double).cpp in Sources */,
+				553ACC7F2345B1820079F35A /* b+_tree.cpp in Sources */,
 				559B1BDF22C3AE670091FE8C /* simulated_annealing.cpp in Sources */,
 				5526E41B22046B87005C64AF /* trie.cpp in Sources */,
 				55B0ECF122D0F46000AE6DCD /* kruskal.cpp in Sources */,
@@ -635,11 +703,14 @@
 				5526E43622046CBC005C64AF /* segment_tree.cpp in Sources */,
 				55AD27632266F54100C84BFC /* hash.cpp in Sources */,
 				559B1A89227979A50091FE8C /* scc.cpp in Sources */,
+				553ACC9423470B380079F35A /* str_func.cpp in Sources */,
 				55B0ECF322D0F55D00AE6DCD /* plane_sweeping.cpp in Sources */,
 				55B0ECEF22D0F45500AE6DCD /* prim.cpp in Sources */,
 				55AD27652266F9E600C84BFC /* deque.cpp in Sources */,
+				553ACC8923470A2C0079F35A /* hash_linear_probing.cpp in Sources */,
 				5526E41322046B2B005C64AF /* aho_corasick.cpp in Sources */,
 				55AD27612266F4A400C84BFC /* heap.cpp in Sources */,
+				553ACC8B23470A7E0079F35A /* hash_quadratic_probing.cpp in Sources */,
 				559B1A83227977C10091FE8C /* manacher.cpp in Sources */,
 				55B0ED1922DD923F00AE6DCD /* quad_tree.cpp in Sources */,
 				55F744C423348F69008C4AF8 /* binary_search_tree_reculsive.cpp in Sources */,
@@ -649,6 +720,7 @@
 				5526E405220324ED005C64AF /* bfs.cpp in Sources */,
 				5526E44822046D62005C64AF /* mcmf.cpp in Sources */,
 				5526E41122046B0B005C64AF /* karp_rabin.cpp in Sources */,
+				553ACC9623470BA10079F35A /* hash_chaining_binary_search_tree.cpp in Sources */,
 				5526E45622046DFF005C64AF /* subset.cpp in Sources */,
 				559B1AB0228BD2B30091FE8C /* duplicated_combination.cpp in Sources */,
 				553ACC672341E6120079F35A /* semaphore_linux.cpp in Sources */,

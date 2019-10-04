@@ -7,7 +7,12 @@
 //
 
 /**
+ *  [ 현재 index의 값을 index이전의 정렬된 리스트의 알맞는 위치에 '삽입'하여 넣는 알고리즘 - Insertion ]
  *
+ *
+ *
+ *  [ Time ] beset = O(N), avg = worst = O(N^2)
+ *  [ Stable Sort ]
  */
 #include <iostream>
 using namespace std;

@@ -12,11 +12,12 @@
 
 using namespace std;
 
-class list {
-public:
+typedef struct list{
     int x, y, cost;
-    bool operator()(list i, list j) { return i.cost < j.cost; }
-};
+    bool operator()(const list& i) const{
+        return cost < i.cost;
+    }
+}list;
 
 int disjoint(int x, vector<int> &uf) {
     return (x != uf[x]) ? uf[x] = disjoint(uf[x], uf) : x;
@@ -30,7 +31,8 @@ int main() {
     vector <int> uf(n + 1);
     vector <list> v(m);
     
-    for (int i = 1; i <= n; i++) uf[i] = i;
+    for (int i = 1; i <= n; i++)
+        uf[i] = i;
     
     for (int i = 0; i < m; i++)
         cin >> v[i].x >> v[i].y >> v[i].cost;
