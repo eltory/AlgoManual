@@ -15,8 +15,8 @@
 //
 
 
-#include <cstdlib>
-#include "str_func.cpp"
+#include <iostream>
+#include <str_func.cpp>
 using namespace std;
 const int MAX_DATA_SIZE = 128;
 
@@ -25,15 +25,16 @@ typedef struct Node{
     char data[MAX_DATA_SIZE];
     nptr left, right;
     
-    Node(){
+    Node(char* key){
+        strcpy(data, key);
         left = right = NULL;
     }
     
     void retrieve(nptr curr){
         if(curr == NULL) return;
-        delete curr;
         preOrder(curr->left);
         preOrder(curr->right);
+        delete curr;
     }
     
     nptr findMin(nptr root){
@@ -60,9 +61,10 @@ typedef struct Node{
     
     nptr deletion(nptr curr, char* key){
         nptr tNode = NULL;
-        if(curr == NULL)
+        if(curr == NULL){
+            cout << key << " does not exist.\n";
             return NULL;
-        
+        }
         if(strcmp(curr->data, key) > 0)
             curr->left = deletion(curr->left, key);
         else if(strcmp(curr->data, key) < 0)
@@ -108,4 +110,6 @@ typedef struct Node{
         postOrder(curr->right);
     }
 }Node;
+
+
 

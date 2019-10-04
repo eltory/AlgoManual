@@ -17,18 +17,12 @@ const int MAX_TABLE_SIZE = 4096;
 
 typedef struct Bucket* ptr;
 typedef struct Bucket{
-    char data[MAX_DATA_SIZE];   // Key겸 Data, 추가로 설정 가능
     nptr root;   // Chaining
     
-    Bucket(){
-        root = NULL;
-        memset(data, 0, sizeof(data));
-    }
     Bucket(char* key){
-        strcpy(data, key);
+        root = new Node(key);
     }
 }Bucket;
-
 
 ptr hashTable[MAX_TABLE_SIZE];
 
@@ -53,18 +47,20 @@ unsigned long hashing(char* key){
 void search(char* key){
     unsigned long idx = hashing(key);
     ptr p = hashTable[idx];
-    nptr root = p->root;
-    root = root->search(root, key);
     
-    if(p == NULL || root == NULL){
+    if(p == NULL){
         cout << "Not founded.\n";
         return;
     }
-    cout << root->data;
+    if(p->root->search(p->root, key) == NULL){
+        cout << "Not founded.\n";
+        return;
+    }
+    cout << key << " founded.\n";
 }
 
 /* 해싱된 index에 데이터 삽입
- * 충돌이 일어나면 체이닝으로 이진탐색트리에 삽입
+ * 충돌이 일어나면 체이닝으로 리스트 연결
  */
 void insertion(char* key){
     unsigned long idx = hashing(key);
@@ -75,6 +71,10 @@ void insertion(char* key){
     }else{
         ptr p = hashTable[idx];
         nptr root = p->root;
+        if(root->search(root, key) != NULL){
+            cout << key << " is already inserted.\n";
+            return;
+        }
         p->root = root->insertion(root, key);
     }
     cout << "Insertion " << key << " completed.\n";
@@ -85,15 +85,13 @@ void insertion(char* key){
  */
 void deletion(char* key){
     unsigned long idx = hashing(key);
-    ptr p = hashTable[idx];
-    nptr root = p->root;
-    
-    if(p == NULL || root->search(root, key) == NULL){
+    if(hashTable[idx] == NULL){
         cout << "Not founded.\n";
         return;
     }
+    ptr p = hashTable[idx];
+    nptr root = p->root;
     p->root = root->deletion(root, key);
-    cout << "Deletion " << key << " completed.\n";
 }
 
 
