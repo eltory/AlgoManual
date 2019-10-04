@@ -19,13 +19,10 @@ typedef struct Bucket* ptr;
 typedef struct Bucket{
     char data[MAX_DATA_SIZE];   // Key겸 Data, 추가로 설정 가능
     ptr next;   // Chaining
-
-    Bucket(){
-        memset(data, 0, sizeof(data));
-        next = NULL;
-    }
+    
     Bucket(char* key){
         strcpy(data, key);
+        next = NULL;
     }
 }Bucket;
 
@@ -59,10 +56,12 @@ void search(char* key){
     }
     while(strcmp(p->data, key) != 0){
         p = p->next;
-        if(p == NULL)
+        if(p == NULL){
+            cout << "Not founded.\n";
             return;
+        }
     }
-    cout << p->data;
+    cout << key << " founded.\n";
 }
 
 /* 해싱된 index에 데이터 삽입
@@ -76,8 +75,13 @@ void insertion(char* key){
         hashTable[idx] = bucket;
     }else{
         ptr p = hashTable[idx];
-        while(p->next != NULL)
+        while(p != NULL){
+            if(strcmp(p->data, key) == 0){  // 중복키 제거
+                cout << key << " is already inserted.\n";
+                return;
+            }
             p = p->next;
+        }
         p->next = bucket;
     }
     cout << "Insertion " << key << " completed.\n";
@@ -88,23 +92,48 @@ void insertion(char* key){
  */
 void deletion(char* key){
     unsigned long idx = hashing(key);
-    ptr p = hashTable[idx];
-    if(p == NULL){
+    if(hashTable[idx] == NULL){
         cout << "Not founded.\n";
         return;
     }
+    ptr p = hashTable[idx];
     ptr prev = p;
     while(strcmp(p->data, key) != 0){
         prev = p;
         p = p->next;
-        if(p == NULL)
+        if(p == NULL){
+            cout << "Not founded.\n";
             return;
+        }
     }
-    prev->next = p->next;
-    free(p);
+    if(prev == p){
+        // 버킷에서 찾았을때 버킷과 다음체인 연결
+        hashTable[idx] = p->next;
+    }else{
+        // 체인 중간에서 찾았을때 이전체인과 다음체이 연결
+        prev->next = p->next;
+    }
+    free(p);    // 해당 체인노드 삭제
     cout << "Deletion " << key << " completed.\n";
 }
 
-
-
-
+//int main(){
+//
+//    char t1[7] = {'T','E','S','T',' ','1','\0'};
+//    char t2[7] = {'T','E','S','T',' ','2','\0'};
+//
+//    search(t1);
+//    insertion(t1);
+//    insertion(t1);
+//    insertion(t2);
+//
+//    search(t1);
+//    search(t2);
+//    deletion(t1);
+//    search(t1);
+//    deletion(t1);
+//    search(t2);
+//    deletion(t2);
+//    search(t2);
+//    return 0;
+//}

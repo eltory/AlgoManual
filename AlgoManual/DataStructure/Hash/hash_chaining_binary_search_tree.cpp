@@ -95,3 +95,19 @@ void deletion(char* key){
     p->root = root->deletion(root, key);
     cout << "Deletion " << key << " completed.\n";
 }
+
+
+int main(){
+
+    char t1[3] = {'t','1','\0'};
+    char t2[3] = {'t','2','\0'};
+    insertion(t1);
+    insertion(t1);
+    insertion(t2);
+
+    search(t1);
+    search(t2);
+    deletion(t2);
+    search(t2);
+    return 0;
+}
